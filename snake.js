@@ -2,8 +2,7 @@ class Snake {
     constructor() {
         this.color = 'black'
         this.cells = []
-        this.speed = 1
-        this.dir = { x: 1, y: 0 }
+        this.dir = {x:1, y:0}
         for (var i = 2; i >= 0; i--) {
             this.cells.push({ x: i, y: 0 })
         }
@@ -20,7 +19,7 @@ class Snake {
             else {
                 this.cells.pop()
             }
-            this.cells.unshift({ x: this.cells[0].x + this.dir.x, y: this.cells[0].y + this.dir.y })
+            this.cells.unshift({x:this.cells[0].x + this.dir.x, y:this.cells[0].y + this.dir.y})
             this.cells[0].x = (this.cells[0].x + 15) % 15
             this.cells[0].y = (this.cells[0].y + 15) % 15
         }

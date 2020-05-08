@@ -1,13 +1,14 @@
 function init() {
-    fps = 8
-    lastFrameTime = 0
-    timeFrameRate = 1000 / fps
+    fps = 6
+    lastTime = 0
+    frameTime = 1000 / fps
     setup()
     requestAnimationFrame(gameloop)
 }
-function gameloop(currTimeStamp) {
-    if(currTimeStamp - lastFrameTime > timeFrameRate) {
-        lastFrameTime = currTimeStamp;
+function gameloop(timeStamp) {
+    deltaTime = timeStamp - lastTime
+    if(deltaTime > frameTime) {
+        lastTime = timeStamp
         update()
         getFrame()
     }
